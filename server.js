@@ -1,17 +1,14 @@
-var http = require ('http');
+var express = require ('express');
 
-var ip = "127.0.0.1";
+var serveur = express();
 
-var port = 12107;
+server.get("/",function(request,response){
+  response.send("message");
+});
 
-var server = http.createServer(
-  function(request,response){
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'text/plain');
-    response.end('Bonjour');
-  }
-);
+server.get("/toto",function(request,response){
+  response.sendFile(__dirname + "view/index.html");
+});
 
-server.listen(port,ip,function(){
-  console.log('testttttttttttt je tecoute')
-})
+
+server.listen(12107);
