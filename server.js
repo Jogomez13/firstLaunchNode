@@ -11,4 +11,4 @@ server.get("/toto",function(request,response){
 });
 
 
-server.listen(12107);
+server.listen(process.env.PORT || 12107);
